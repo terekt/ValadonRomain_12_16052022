@@ -16,7 +16,7 @@ function Home() {
                 <div className="dashboard">
                     <Vnavbar />
                     <div className="welcome">
-                        <div>Boujour</div>
+                        <div>Bonjour</div>
                         <div>Thomas</div>
                         <div>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
                     </div>
@@ -28,7 +28,7 @@ function Home() {
                             <Score />
                         </div>
                     </div>
-                    <div className="left-container">
+                    <div className="right-container">
                         <Nutrition />
                     </div>
                 </div>
