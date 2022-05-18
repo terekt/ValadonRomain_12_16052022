@@ -8,10 +8,10 @@ function Hnavbar() {
                 <img src={Logo} alt="logo" className="logo" />
                 <nav className="menu">
                     <ul>
-                        <li><a href="#">Accueil</a></li>
-                        <li><a href="#">Profil</a></li>
-                        <li><a href="#">Réglage</a></li>
-                        <li><a href="#">Communauté</a></li>
+                        <li><a href="/" key={0}>Accueil</a></li>
+                        <li><a href="/" key={1}>Profil</a></li>
+                        <li><a href="/" key={2}>Réglage</a></li>
+                        <li><a href="/" key={3}>Communauté</a></li>
                     </ul>
                 </nav>
             </div>
