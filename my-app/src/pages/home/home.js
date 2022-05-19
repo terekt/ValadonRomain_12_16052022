@@ -6,13 +6,15 @@ import Time from "../../components/Time/Time";
 import Rating from "../../components/Rating/Rating";
 import Score from "../../components/Score/Score";
 import Nutrition from "../../components/Nutrition/Nutrition";
+import getID from "../../data/data";
 
 function Home() {
+    var testing = getID().then(data => {return data});
+    console.log(testing);
     return (
         <>
             <div className="Home">
                 <Hnavbar />
-
                 <div className="dashboard">
                     <Vnavbar />
                     <div className="welcome">
