@@ -14,7 +14,6 @@ async function getID() {
         .catch(error => {
             console.error(error);
         });
-        console.log(data)
 }
 
 export default getID;

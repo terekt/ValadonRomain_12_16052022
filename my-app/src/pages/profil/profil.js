@@ -1,4 +1,4 @@
-import "./home.css";
+import "./profil.css";
 import Vnavbar from "../../components/Vertical-navbar/Vnavbar";
 import Hnavbar from "../../components/Horizontal-navbar/Hnavbar";
 import Daily from "../../components/Daily/Daily";
@@ -6,11 +6,8 @@ import Time from "../../components/Time/Time";
 import Rating from "../../components/Rating/Rating";
 import Score from "../../components/Score/Score";
 import Nutrition from "../../components/Nutrition/Nutrition";
-import getID from "../../data/data";
 
-function Home() {
-    var testing = getID().then(data => {return data});
-    console.log(testing);
+function Profil() {
     return (
         <>
             <div className="Home">
@@ -39,4 +36,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default Profil;
