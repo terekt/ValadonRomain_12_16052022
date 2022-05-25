@@ -3,14 +3,12 @@ import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Resp
 
 function Daily(props) {
 
-    //console.log(props.data.sessions);
-
     const data = [];
 
     for (let i = 0; i < props.data.sessions.length; i++) {
         data.push({ calories: props.data.sessions[i].calories, kilogram: props.data.sessions[i].kilogram, day: i + 1 });
     }
-    console.log(data);
+    //console.log(data);
 
     return (
         <>

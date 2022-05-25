@@ -13,3 +13,7 @@
 .dataviz-container {
     display: flex;
 }
+
+.bottom-widgets {
+    display: flex;
+}

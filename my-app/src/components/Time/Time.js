@@ -3,7 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 function Time(props) {
 
-    console.log(props.data.sessions)
+    //console.log(props.data.sessions)
 
     const data = props.data.sessions;
 
