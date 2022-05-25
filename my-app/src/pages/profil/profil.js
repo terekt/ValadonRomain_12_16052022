@@ -34,16 +34,18 @@ function Profil() {
                             <div>{Main_data.userInfos.firstName}</div>
                             <div>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
                         </div>
-                        <div className="left-container">
-                            <Daily data={Activity} />
-                            <div className="bottom-widgets">
-                                <Time data={Average_session} />
-                                <Rating data={Performance} />
-                                <Score data={Main_data.todayScore} />
+                        <div className="dataviz-container">
+                            <div className="left-container">
+                                <Daily data={Activity} />
+                                <div className="bottom-widgets">
+                                    <Time data={Average_session} />
+                                    <Rating data={Performance} />
+                                    <Score data={Main_data.todayScore} />
+                                </div>
                             </div>
-                        </div>
-                        <div className="right-container">
-                            <Nutrition data={Main_data.keyData} />
+                            <div className="right-container">
+                                <Nutrition data={Main_data.keyData} />
+                            </div>
                         </div>
                     </div>
                 </div>
