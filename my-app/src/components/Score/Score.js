@@ -4,7 +4,7 @@ import { RadialBarChart, RadialBar, PolarAngleAxis, Legend, ResponsiveContainer 
 function Score(props) {
 
     const data = [{value: props.data, name: "time"}];
-    console.log(data);
+    //console.log(data);
 
     return (
         <>
