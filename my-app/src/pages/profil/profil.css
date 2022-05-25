@@ -4,3 +4,8 @@
 .dashboard {
     display: flex;
 }
+
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+}
