@@ -3,22 +3,54 @@
     background-color: #FBFBFB;
     border-radius: 5px;
     padding: 32px;
+    margin-bottom: 39px;
 }
 
 .icon {
     width: 60px;
     height: 60px;
     border-radius: 6px;
-}
-
-.calorie .icon {
-    background-color: #ff000025;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.calorie .icon {
+    background-color: #ff000025;
+}
+
+.protein .icon {
+    background-color: #4AB8FF1A;
+}
+
+.carbohydrate .icon {
+    background-color: #f9ce2325;
+}
+
+.lipid .icon {
+    background-color: #ff000025;
+}
+
 .icon img {
     max-width: 20px;
     max-height: 20px;
+}
+
+
+.nutrition-text {
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.quantity {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.nutrition-name{
+    font-weight: 500;
+    font-size: 14px;
+    color: #74798C;
 }

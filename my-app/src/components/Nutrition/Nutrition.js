@@ -21,7 +21,7 @@ function Nutrition(props) {
                 </div>
                 <div className="nutrition-text">
                     <div className="quantity">{calorie}kCal</div>
-                    <div className="name">Calories</div>
+                    <div className="nutrition-name">Calories</div>
                 </div>
             </div>
             <div className="protein nutrition">
@@ -30,7 +30,7 @@ function Nutrition(props) {
                 </div>
                 <div className="nutrition-text">
                     <div className="quantity">{protein}g</div>
-                    <div className="name">Proteines</div>
+                    <div className="nutrition-name">Proteines</div>
                 </div>
             </div>
             <div className="carbohydrate nutrition">
@@ -39,7 +39,7 @@ function Nutrition(props) {
                 </div>
                 <div className="nutrition-text">
                     <div className="quantity">{carbohydrate}g</div>
-                    <div className="name">Glucides</div>
+                    <div className="nutrition-name">Glucides</div>
                 </div>
             </div>
             <div className="lipid nutrition">
@@ -48,7 +48,7 @@ function Nutrition(props) {
                 </div>
                 <div className="nutrition-text">
                     <div className="quantity">{lipid}g</div>
-                    <div className="name">Lipides</div>
+                    <div className="nutrition-name">Lipides</div>
                 </div>
             </div>
         </>
