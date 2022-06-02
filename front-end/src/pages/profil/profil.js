@@ -7,15 +7,20 @@ import Rating from "../../components/Rating/Rating";
 import Score from "../../components/Score/Score";
 import Nutrition from "../../components/Nutrition/Nutrition";
 import { Main_data, Activity, Average_session, Performance } from "../../services/api";
-import { GetName } from "../../services/api";
+import { GetName, GetActivityData, GetKeyData, GetPerformance, GetScore, GetSessionData } from "../../services/api";
 import { useParams } from "react-router-dom";
 
 function Profil() {
 
     let {id}  = useParams();
-    const name = GetName(id);
+    let name = GetName(id);
+    let activity = GetActivityData(id);
+    let keydata = GetKeyData(id);
+    let performance = GetPerformance(id);
+    let score = GetScore(id);
+    let session = GetSessionData(id);
 
-    console.log(id);
+    //console.log(name);
 
     return (
         <>
@@ -27,7 +32,7 @@ function Profil() {
                         <div className="welcome">
                             <div className="name">
                                 <div className="bonjour">Bonjour</div>
-                                <div className="userName">{Main_data.userInfos.firstName}</div>
+                                <div className="userName">{name}</div>
                             </div>
                             <div className="motivation-text">Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
                         </div>

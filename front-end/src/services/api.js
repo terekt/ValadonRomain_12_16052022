@@ -11,28 +11,131 @@ var Average_session = Data.USER_AVERAGE_SESSIONS[1];
 var Performance = Data.USER_PERFORMANCE[1];
 //console.log(Performance);
 
-export {Main_data, Activity, Average_session, Performance} 
+export { Main_data, Activity, Average_session, Performance }
 
 
 
 const url = "http://localhost:3000/user/";
 
-const Mock = true;
+const Mock = false;
 
 export function GetName(id) {
-  const [name, setName] = useState("");
+    const [name, setName] = useState("");
+    console.log(id);
 
-  useEffect(() => {
-    if (Mock === true) {
-      fetch(`${Data}user${id}.json`)
-        .then((response) => response.json())
-        .then((result) => setName(result.data.userInfos.firstName));
-    } else {
-      fetch(url + id)
-        .then((response) => response.json())
-        .then((result) => setName(result.data.userInfos.firstName));
-    }
-  }, [id]);
+    useEffect(() => {
+        if (Mock === true) {
+            fetch(`${Data}user${id}.json`)
+                .then((response) => response.json())
+                .then((result) => setName(result.data.userInfos.firstName));
+        } else {
+            if (id === "12") {
+                setName(Data.USER_MAIN_DATA[0].userInfos.firstName);
+            } else {
+                setName(Data.USER_MAIN_DATA[1].userInfos.firstName);
+            }
+        }
+    }, [id]);
 
-  return name;
+    return name;
+}
+
+export function GetKeyData(id) {
+    const [keyData, setKeyData] = useState("");
+
+    useEffect(() => {
+        if (Mock === true) {
+            fetch(`${Data}user${id}.json`)
+                .then((response) => response.json())
+                .then((result) => setKeyData(result.data.keyData));
+        } else {
+            if (id === "12") {
+                setKeyData(Data.USER_MAIN_DATA[0].keyData);
+            } else {
+                setKeyData(Data.USER_MAIN_DATA[1].keyData);
+            }
+        }
+    }, [id]);
+
+    return keyData;
+}
+
+export function GetActivityData(id) {
+    const [activity, setActivity] = useState("");
+
+    useEffect(() => {
+        if (Mock === true) {
+            fetch(`${Data}${id}/activity.json`)
+                .then((response) => response.json())
+                .then((result) => setActivity(result.data.sessions));
+        } else {
+            if (id === "12") {
+                setActivity(Data.USER_ACTIVITY[0]);
+            } else {
+                setActivity(Data.USER_ACTIVITY[1]);
+            }
+        }
+    }, [id]);
+
+    return activity;
+}
+
+export function GetSessionData(id) {
+    const [session, setSession] = useState("");
+
+    useEffect(() => {
+        if (Mock === true) {
+            fetch(`${Data}${id}/average-session.json`)
+                .then((response) => response.json())
+                .then((result) => setSession(result.data.sessions));
+        } else {
+            if (id === "12") {
+                setSession(Data.USER_AVERAGE_SESSIONS[0]);
+            } else {
+                setSession(Data.USER_AVERAGE_SESSIONS[1]);
+            }
+        }
+    }, [id]);
+
+    return session;
+}
+
+export function GetScore(id) {
+    const [score, setScore] = useState("");
+
+    useEffect(() => {
+        if (Mock === true) {
+            fetch(`${Data}user${id}.json`)
+                .then((response) => response.json())
+                .then((result) => setScore(result.data));
+        } else {
+            if (id === "12") {
+                setScore(Data.USER_MAIN_DATA[0]);
+            } else {
+                setScore(Data.USER_MAIN_DATA[1]);
+            }
+        }
+    }, [id]);
+
+    return score;
+}
+
+export function GetPerformance(id) {
+    const [performance, setPerformance] = useState("");
+
+    useEffect(() => {
+        if (Mock === true) {
+            fetch(`${Data}${id}/performance.json`)
+                .then((response) => response.json())
+                .then((result) => setPerformance(result.data.data));
+        } else {
+            if (id === "12") {
+                setPerformance(Data.USER_PERFORMANCE[0]);
+            } else {
+                setPerformance(Data.USER_PERFORMANCE[1]);
+            }
+        }
+    }, [id]);
+
+    return performance;
 }
