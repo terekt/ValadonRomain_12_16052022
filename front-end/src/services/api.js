@@ -1,32 +1,39 @@
 import Data from "../assets/data";
+import { useState, useEffect } from "react";
 
 
-var Main_data = Data.USER_MAIN_DATA[0];
+var Main_data = Data.USER_MAIN_DATA[1];
 //console.log(Main_data);
-var Activity = Data.USER_ACTIVITY[0];
+var Activity = Data.USER_ACTIVITY[1];
 //console.log(Activity);
-var Average_session = Data.USER_AVERAGE_SESSIONS[0];
+var Average_session = Data.USER_AVERAGE_SESSIONS[1];
 //console.log(Average_session);
-var Performance = Data.USER_PERFORMANCE[0];
+var Performance = Data.USER_PERFORMANCE[1];
 //console.log(Performance);
 
-async function getID() {
-
-    /*let data = await fetch('http://localhost:3000/user/18')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data.data);
-            const id = data.data.id;
-            const score = data.data.score;
-            const keyData = data.data.keyData;
-            const firstName = data.data.userInfos.firstName;
-            return [id, score, keyData, firstName];
-            return data;
-        })
-        .catch(error => {
-            console.error(error);
-        });*/
-}
-
-export default getID;
 export {Main_data, Activity, Average_session, Performance} 
+
+
+
+const url = "http://localhost:3000/user/";
+
+const Mock = true;
+
+export function GetName(id) {
+  const [name, setName] = useState("");
+  let idUser = id;
+
+  useEffect(() => {
+    if (Mock === true) {
+      fetch(`${Data}user${idUser}.json`)
+        .then((response) => response.json())
+        .then((result) => setName(result.data.userInfos.firstName));
+    } else {
+      fetch(url + idUser)
+        .then((response) => response.json())
+        .then((result) => setName(result.data.userInfos.firstName));
+    }
+  }, [idUser]);
+
+  return name;
+}

@@ -3,6 +3,7 @@ import Meditation from "../../assets/meditation.png";
 import Swim from "../../assets/Swim.png";
 import Bycycle from "../../assets/bycycle.png";
 import Weight from "../../assets/weight.png";
+import { NavLink } from 'react-router-dom';
 
 function Vnavbar() {
     return (
@@ -10,18 +11,18 @@ function Vnavbar() {
             <div className="Vnavbar">
                 <nav>
                     <ul>
-                        <li key={0} href="/">
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">
                             <img src={Meditation} alt="Meditation" />
-                        </li>
-                        <li key={1} href="/">
+                        </NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">
                             <img src={Swim} alt="Swim" />
-                        </li>
-                        <li key={2} href="/">
+                        </NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">
                             <img src={Bycycle} alt="Bycycle" />
-                        </li>
-                        <li key={3} href="/">
+                        </NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">
                             <img src={Weight} alt="Weight" />
-                        </li>
+                        </NavLink></li>
                     </ul>
                 </nav>
                 <div className="copyright">Copyright, SportSee 2020</div>

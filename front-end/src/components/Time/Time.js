@@ -7,6 +7,18 @@ function Time(props) {
 
     const data = props.data.sessions;
 
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+          return (
+            <div className="time-tooltip">
+              <p className="time-tooltip-content">{`${payload[0].value} min`}</p>
+            </div>
+          );
+        }
+      
+        return null;
+      };
+
     return (
         <>
             <div className="time">
@@ -22,7 +34,7 @@ function Time(props) {
                         </linearGradient>
                     </defs>
                     <XAxis dataKey="day" hide={true} />
-                    <Tooltip cursor={{
+                    <Tooltip content={<CustomTooltip />} cursor={{
                         stroke: "black",
                         strokeOpacity: 0.1,
                         strokeWidth: 40,

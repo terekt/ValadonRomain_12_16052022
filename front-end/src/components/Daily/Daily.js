@@ -9,6 +9,18 @@ function Daily(props) {
         data.push({ calories: props.data.sessions[i].calories, kilogram: props.data.sessions[i].kilogram, day: i + 1 });
     }
 
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+          return (
+            <div className="daily-tooltipBar">
+              <p className="daily-tooltipBar-content">{`${payload[0].value} kg`}</p>
+              <p className="daily-tooltipBar-content">{`${payload[1].value} Kcal`}</p>
+            </div>
+          );
+        }
+      
+        return null;
+    };
 
     return (
         <>
@@ -31,7 +43,7 @@ function Daily(props) {
                     <CartesianGrid strokeDasharray="2 3" vertical={false} />
                     <XAxis dataKey="day" tickMargin={15} tickLine={false} axisLine={false} />
                     <YAxis orientation="right" tickMargin={40} tickLine={false} axisLine={false} />
-                    <Tooltip />
+                    <Tooltip content={<CustomTooltip />} cursor={{ fill: '#C4C4C480', strokeWidth: 2 }}  />
                     <Bar dataKey="kilogram" fill="#282D30" radius={[25, 25, 0, 0]} barSize={7} />
                     <Bar dataKey="calories" fill="#E60000" radius={[25, 25, 0, 0]} barSize={7} />
                 </BarChart>

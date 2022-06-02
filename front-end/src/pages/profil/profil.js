@@ -7,8 +7,15 @@ import Rating from "../../components/Rating/Rating";
 import Score from "../../components/Score/Score";
 import Nutrition from "../../components/Nutrition/Nutrition";
 import { Main_data, Activity, Average_session, Performance } from "../../services/api";
+import { GetName } from "../../services/api";
+import { useParams } from "react-router-dom";
 
 function Profil() {
+
+    let {id}  = useParams();
+    const name = GetName(id);
+
+    console.log(id);
 
     return (
         <>
@@ -30,7 +37,7 @@ function Profil() {
                                 <div className="bottom-widgets">
                                     <Time data={Average_session} />
                                     <Rating data={Performance} />
-                                    <Score data={Main_data.todayScore} />
+                                    <Score data={Main_data} />
                                 </div>
                             </div>
                             <div className="right-container">

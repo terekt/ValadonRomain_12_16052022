@@ -1,5 +1,6 @@
 import "./Hnavbar.css";
 import Logo from "../../assets/logo.png";
+import { NavLink } from 'react-router-dom';
 
 function Hnavbar() {
     return (
@@ -8,10 +9,10 @@ function Hnavbar() {
                 <img src={Logo} alt="logo" className="logo" />
                 <nav className="menu">
                     <ul>
-                        <li><a href="/" key={0}>Accueil</a></li>
-                        <li><a href="/" key={1}>Profil</a></li>
-                        <li><a href="/" key={2}>Réglage</a></li>
-                        <li><a href="/" key={3}>Communauté</a></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">Accueil</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">Profil</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">Réglage</NavLink></li>
+                        <li><NavLink className={({ isActive }) => (isActive ? 'active' : '')} to="/">Communauté</NavLink></li>
                     </ul>
                 </nav>
             </div>

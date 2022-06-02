@@ -3,8 +3,14 @@ import { RadialBarChart, RadialBar, PolarAngleAxis, Legend, ResponsiveContainer 
 
 function Score(props) {
 
-    const data = [{ value: props.data, name: "time" }];
-    console.log(data);
+    var data = [];
+    if (props.data.todayScore !== undefined){
+        data = [{ value: props.data.todayScore, name: "time" }];
+    }
+    
+    if (props.data.score !== undefined){
+        data = [{ value: props.data.score, name: "time" }];
+    }
 
     return (
         <>
