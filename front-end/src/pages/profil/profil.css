@@ -1,0 +1,46 @@
+.Home {
+}
+
+.dashboard {
+    display: flex;
+}
+
+.content-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 50px 12vw 0 12vw;
+}
+
+.dataviz-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-widgets {
+    display: flex;
+    margin-top: 28px;
+}
+
+.recharts-wrapper {
+    margin-right: 20px;
+}
+
+.welcome {
+    margin-bottom: 50px;
+}
+
+.name {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.bonjour, .userName {
+    margin-right: 6px;
+    font-size: 48px;
+    font-weight: 500;
+}
+
+.userName {
+    color: #FF0000;
+}

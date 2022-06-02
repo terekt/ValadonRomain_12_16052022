@@ -6,21 +6,9 @@ import Time from "../../components/Time/Time";
 import Rating from "../../components/Rating/Rating";
 import Score from "../../components/Score/Score";
 import Nutrition from "../../components/Nutrition/Nutrition";
-import Data from "../../assets/data";
+import { Main_data, Activity, Average_session, Performance } from "../../services/api";
 
 function Profil() {
-
-    var Main_data = Data.USER_MAIN_DATA[0];
-    //console.log(Main_data);
-    var Activity = Data.USER_ACTIVITY[0];
-    //console.log(Activity);
-    var Average_session = Data.USER_AVERAGE_SESSIONS[0];
-    //console.log(Average_session);
-    var Performance = Data.USER_PERFORMANCE[0];
-    //console.log(Performance);
-
-
-
 
     return (
         <>
@@ -30,9 +18,11 @@ function Profil() {
                     <Vnavbar />
                     <div className="content-wrap">
                         <div className="welcome">
-                            <div>Bonjour</div>
-                            <div>{Main_data.userInfos.firstName}</div>
-                            <div>Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
+                            <div className="name">
+                                <div className="bonjour">Bonjour</div>
+                                <div className="userName">{Main_data.userInfos.firstName}</div>
+                            </div>
+                            <div className="motivation-text">Félicitation ! Vous avez explosé vos objectifs hier 👏</div>
                         </div>
                         <div className="dataviz-container">
                             <div className="left-container">

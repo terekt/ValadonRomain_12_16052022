@@ -6,7 +6,7 @@ import icon4 from "../../assets/cheeseburger.svg";
 
 function Nutrition(props) {
 
-    console.log(props.data);
+    //console.log(props.data);
 
     const calorie = props.data.calorieCount;
     const protein = props.data.proteinCount;
