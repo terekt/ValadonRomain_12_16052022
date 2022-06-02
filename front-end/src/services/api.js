@@ -21,19 +21,18 @@ const Mock = true;
 
 export function GetName(id) {
   const [name, setName] = useState("");
-  let idUser = id;
 
   useEffect(() => {
     if (Mock === true) {
-      fetch(`${Data}user${idUser}.json`)
+      fetch(`${Data}user${id}.json`)
         .then((response) => response.json())
         .then((result) => setName(result.data.userInfos.firstName));
     } else {
-      fetch(url + idUser)
+      fetch(url + id)
         .then((response) => response.json())
         .then((result) => setName(result.data.userInfos.firstName));
     }
-  }, [idUser]);
+  }, [id]);
 
   return name;
 }
