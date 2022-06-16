@@ -18,7 +18,6 @@ function Profil() {
     let performance = GetPerformance(id);
     let score = GetScore(id);
     let session = GetSessionData(id);
-    //console.log(name);
 
     return (
         <>
