@@ -3,10 +3,8 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 
 function Performance(props) {
 
-    //console.log(props.data.data)
     var data = props.data;
-    //const kind = props.data.kind;
-    console.log(data)
+    //console.log(data)
     
     async function updateKind() {
         data[0].kind = "Intensité";

@@ -17,13 +17,13 @@ export { Main_data, Activity, Average_session, Performance }
 
 const url = "http://localhost:3000/user/";
 
-const Mock = true;
+const FetchBackEnd = true;
 
 export function GetName(id) {
     const [name, setName] = useState("");
 
     useEffect(() => {
-        if (Mock === true) {
+        if (FetchBackEnd === true) {
             fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setName(result.data.userInfos.firstName));
@@ -43,7 +43,7 @@ export function GetKeyData(id) {
     const [keyData, setKeyData] = useState("");
 
     useEffect(() => {
-        if (Mock === false) {
+        if (FetchBackEnd === true) {
             fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setKeyData(result.data.keyData));
@@ -63,8 +63,8 @@ export function GetActivityData(id) {
     const [activity, setActivity] = useState("");
 
     useEffect(() => {
-        if (Mock === false) {
-            fetch(url+id)
+        if (FetchBackEnd === true) {
+            fetch(`${url+id}/activity`)
                 .then((response) => response.json())
                 .then((result) => setActivity(result.data.sessions));
         } else {
@@ -83,8 +83,8 @@ export function GetSessionData(id) {
     const [session, setSession] = useState("");
 
     useEffect(() => {
-        if (Mock === true) {
-            fetch(url+id)
+        if (FetchBackEnd === true) {
+            fetch(`${url+id}/average-sessions`)
                 .then((response) => response.json())
                 .then((result) => setSession(result.data.sessions));
         } else {
@@ -103,16 +103,16 @@ export function GetScore(id) {
     const [score, setScore] = useState("");
 
     useEffect(() => {
-        if (Mock === false) {
+        if (FetchBackEnd === true) {
             fetch(url+id)
                 .then((response) => response.json())
-                .then((result) => setScore(result.data));
-                if (score.todayScore !== undefined){
-                    setScore(score.todayScore);
+                .then((result) => {
+                if (result.data.todayScore !== undefined){
+                    setScore(result.data.todayScore);
                 }
-                if (score.score !== undefined){
-                    setScore(score.score);
-                }
+                if (result.data.score !== undefined){
+                    setScore(result.data.score);
+                }});
         } else {
             if (id === "12") {
                 if (Data.USER_MAIN_DATA[0].todayScore !== undefined){
@@ -139,8 +139,8 @@ export function GetPerformance(id) {
     const [performance, setPerformance] = useState("");
 
     useEffect(() => {
-        if (Mock === false) {
-            fetch(url+id)
+        if (FetchBackEnd === true) {
+            fetch(`${url+id}/performance`)
                 .then((response) => response.json())
                 .then((result) => setPerformance(result.data.data));
         } else {
