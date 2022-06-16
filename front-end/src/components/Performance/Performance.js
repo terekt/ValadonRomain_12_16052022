@@ -1,21 +1,27 @@
 import "./Performance.css";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 
+/**
+ * @description Component Radar
+ * @param {array} props performance of user
+ * @returns ReactComponent
+ */
 function Performance(props) {
 
     var data = props.data;
-    //console.log(data)
-    
-    async function updateKind() {
-        data[0].kind = "Intensité";
-        data[1].kind = "Vitesse";
-        data[2].kind = "Force";
-        data[3].kind = "Endurance";
-        data[4].kind = "Energie";
-        data[5].kind = "Cardio";
-    }
 
-    updateKind();
+    const Kind = [
+        "Intensité",
+        "Vitesse",
+        "Force",
+        "Endurance",
+        "Energie",
+        "Cardio",
+      ];
+    
+      function formatedTick(tick) {
+        return Kind[tick - 1];
+      }
 
     return (
         <>
@@ -30,7 +36,7 @@ function Performance(props) {
                 }}>
                 <PolarGrid radialLines={false}
                     polarRadius={[10, 20, 40, 60]} />
-                <PolarAngleAxis dataKey="kind" stroke="white" tickLine={false} style= {{fontSize: 12}}/>
+                <PolarAngleAxis dataKey="kind" stroke="white" tickLine={false} tickFormatter={formatedTick} style= {{fontSize: 12}}/>
                 <Radar dataKey="value" stroke="#ff0101" fill="#ff0101" fillOpacity={0.7} />
             </RadarChart>
         </>

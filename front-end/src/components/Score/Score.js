@@ -1,6 +1,11 @@
 import "./Score.css";
-import { RadialBarChart, RadialBar, PolarAngleAxis, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, PolarAngleAxis } from 'recharts';
 
+/**
+ * @description Component Score
+ * @param {object} props score of user
+ * @returns ReactComponent
+ */
 function Score(props) {
 
     var data = [{ value: props.data, name: "time" }];

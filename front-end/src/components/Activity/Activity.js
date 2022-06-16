@@ -1,6 +1,11 @@
 import "./Activity.css";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
+/**
+ * @description Component daily activity
+ * @param {object} props activity of user
+ * @returns ReactComponent
+ */
 function Activity(props) {
 
     const data = [];

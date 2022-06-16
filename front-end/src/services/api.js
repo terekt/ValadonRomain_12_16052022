@@ -1,10 +1,16 @@
-import Data from "../assets/data";
+import Data from "../data";
 import { useState, useEffect } from "react";
 
 const url = "http://localhost:3000/user/";
 
+//If you want to fetch from back-end, change to "true". Otherwise change to "false"
 var FetchBackEnd = true;
 
+/**
+ * @description get the user name
+ * @param {number} id id of user
+ * @returns name of user
+ */
 export function GetName(id) {
     const [name, setName] = useState("");
 
@@ -25,6 +31,11 @@ export function GetName(id) {
     return name;
 }
 
+/**
+ * @description get the user keydata
+ * @param {*} id id of user
+ * @returns user keydatas
+ */
 export function GetKeyData(id) {
     const [keyData, setKeyData] = useState("");
 
@@ -45,6 +56,11 @@ export function GetKeyData(id) {
     return keyData;
 }
 
+/**
+ * @description get the user activities datas
+ * @param {*} id id of user
+ * @returns user activities datas
+ */
 export function GetActivityData(id) {
     const [activity, setActivity] = useState("");
 
@@ -65,6 +81,11 @@ export function GetActivityData(id) {
     return activity;
 }
 
+/**
+ * @description get the user sessions datas
+ * @param {*} id id of user
+ * @returns user sessions datas
+ */
 export function GetSessionData(id) {
     const [session, setSession] = useState("");
 
@@ -85,6 +106,11 @@ export function GetSessionData(id) {
     return session;
 }
 
+/**
+ * @description get the user score
+ * @param {*} id id of user
+ * @returns user score
+ */
 export function GetScore(id) {
     const [score, setScore] = useState("");
 
@@ -121,6 +147,11 @@ export function GetScore(id) {
     return score;
 }
 
+/**
+ * @description get the user performance
+ * @param {*} id id of user
+ * @returns user performance
+ */
 export function GetPerformance(id) {
     const [performance, setPerformance] = useState("");
 

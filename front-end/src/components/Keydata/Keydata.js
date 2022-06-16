@@ -4,9 +4,12 @@ import icon2 from "../../assets/chicken.png";
 import icon3 from "../../assets/apple.svg";
 import icon4 from "../../assets/cheeseburger.svg";
 
+/**
+ * @description Component KeyData
+ * @param {object} props keydata of user
+ * @returns ReactComponent
+ */
 function Keydata(props) {
-
-    //console.log(props.data);
 
     const calorie = props.data.calorieCount;
     const protein = props.data.proteinCount;

@@ -1,13 +1,16 @@
 import "./Session.css";
-import { Line, LineChart, XAxis, YAxis, Tooltip } from 'recharts';
+import { Line, LineChart, XAxis, Tooltip } from 'recharts';
 
+/**
+ * @description Component Session
+ * @param {array} props session of user
+ * @returns ReactComponent
+ */
 function Session(props) {
-
-    //console.log(props.data.sessions)
 
     const data = props.data;
 
-    const CustomTooltip = ({ active, payload, label }) => {
+    const CustomTooltip = ({ active, payload }) => {
         if (active && payload && payload.length) {
           return (
             <div className="time-tooltip">
