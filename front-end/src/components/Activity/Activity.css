@@ -1,4 +1,4 @@
-.daily-wrapper{
+.Activity-wrapper{
     position: absolute;
     width: 820px;
     top: 300px;
@@ -6,23 +6,23 @@
     justify-content: space-between;
 }
 
-.daily-title{
+.Activity-title{
     margin-left: 32px;
     font-weight: 500;
     font-size: 15px;
 }
 
-.daily-legend{
+.Activity-legend{
     display: flex;
 }
 
-.daily-legend-item{
+.Activity-legend-item{
     margin-right: 35px;
     display: flex;
     align-items: center;
 }
 
-.daily-legend-point{
+.Activity-legend-point{
     height: 8px;
     width: 8px;
     margin-right: 10px;
@@ -37,13 +37,13 @@
     background-color: #282D30;
 }
 
-.daily-legend-text{
+.Activity-legend-text{
     font-weight: 500;
     font-size: 14px;
     color: #9B9EAC;
 }
 
-.daily-tooltipBar{
+.Activity-tooltipBar{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -51,7 +51,7 @@
     padding: 4px 7px;
 }
 
-.daily-tooltipBar-content{
+.Activity-tooltipBar-content{
     font-size: 10px;
     margin: 11px 0;
     color: #FFFFFF;

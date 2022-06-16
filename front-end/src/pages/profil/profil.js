@@ -1,12 +1,11 @@
 import "./profil.css";
 import Vnavbar from "../../components/Vertical-navbar/Vnavbar";
 import Hnavbar from "../../components/Horizontal-navbar/Hnavbar";
-import Daily from "../../components/Daily/Daily";
-import Time from "../../components/Time/Time";
-import Rating from "../../components/Rating/Rating";
+import Activity from "../../components/Activity/Activity";
+import Session from "../../components/Session/Session";
+import Performance from "../../components/Performance/Performance";
 import Score from "../../components/Score/Score";
-import Nutrition from "../../components/Nutrition/Nutrition";
-import { Main_data, Activity, Average_session, Performance } from "../../services/api";
+import Keydata from "../../components/Keydata/Keydata";
 import { GetName, GetActivityData, GetKeyData, GetPerformance, GetScore, GetSessionData } from "../../services/api";
 import { useParams } from "react-router-dom";
 
@@ -19,7 +18,6 @@ function Profil() {
     let performance = GetPerformance(id);
     let score = GetScore(id);
     let session = GetSessionData(id);
-
     //console.log(name);
 
     return (
@@ -38,15 +36,15 @@ function Profil() {
                         </div>
                         <div className="dataviz-container">
                             <div className="left-container">
-                                <Daily data={Activity} />
+                                <Activity data={activity} />
                                 <div className="bottom-widgets">
-                                    <Time data={Average_session} />
-                                    <Rating data={Performance} />
-                                    <Score data={Main_data} />
+                                    <Session data={session} />
+                                    <Performance data={performance} />
+                                    <Score data={score} />
                                 </div>
                             </div>
                             <div className="right-container">
-                                <Nutrition data={Main_data.keyData} />
+                                <Keydata data={keydata} />
                             </div>
                         </div>
                     </div>

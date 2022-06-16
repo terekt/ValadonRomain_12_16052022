@@ -1,11 +1,11 @@
-import "./Time.css";
+import "./Session.css";
 import { Line, LineChart, XAxis, YAxis, Tooltip } from 'recharts';
 
-function Time(props) {
+function Session(props) {
 
     //console.log(props.data.sessions)
 
-    const data = props.data.sessions;
+    const data = props.data;
 
     const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
@@ -58,4 +58,4 @@ function Time(props) {
     )
 }
 
-export default Time;
+export default Session;

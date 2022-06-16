@@ -1,4 +1,4 @@
-.nutrition{
+.Keydata{
     display: flex;
     background-color: #FBFBFB;
     border-radius: 5px;
@@ -37,7 +37,7 @@
 }
 
 
-.nutrition-text {
+.Keydata-text {
     margin-left: 24px;
     display: flex;
     flex-direction: column;
@@ -49,7 +49,7 @@
     font-size: 20px;
 }
 
-.nutrition-name{
+.Keydata-name{
     font-weight: 500;
     font-size: 14px;
     color: #74798C;

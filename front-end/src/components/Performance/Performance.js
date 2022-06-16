@@ -1,19 +1,23 @@
-import "./Rating.css";
+import "./Performance.css";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis } from 'recharts';
 
-function Rating(props) {
+function Performance(props) {
 
     //console.log(props.data.data)
-    const data = props.data.data;
+    var data = props.data;
     //const kind = props.data.kind;
-    //console.log(data)
+    console.log(data)
     
-    data[0].kind = "Intensité";
-    data[1].kind = "Vitesse";
-    data[2].kind = "Force";
-    data[3].kind = "Endurance";
-    data[4].kind = "Energie";
-    data[5].kind = "Cardio";
+    async function updateKind() {
+        data[0].kind = "Intensité";
+        data[1].kind = "Vitesse";
+        data[2].kind = "Force";
+        data[3].kind = "Endurance";
+        data[4].kind = "Energie";
+        data[5].kind = "Cardio";
+    }
+
+    updateKind();
 
     return (
         <>
@@ -35,4 +39,4 @@ function Rating(props) {
     )
 }
 
-export default Rating;
+export default Performance;

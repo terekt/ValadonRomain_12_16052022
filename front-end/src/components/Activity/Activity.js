@@ -1,20 +1,20 @@
-import "./Daily.css";
+import "./Activity.css";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
 
-function Daily(props) {
+function Activity(props) {
 
     const data = [];
 
-    for (let i = 0; i < props.data.sessions.length; i++) {
-        data.push({ calories: props.data.sessions[i].calories, kilogram: props.data.sessions[i].kilogram, day: i + 1 });
+    for (let i = 0; i < props.data.length; i++) {
+        data.push({ calories: props.data[i].calories, kilogram: props.data[i].kilogram, day: i + 1 });
     }
 
     const CustomTooltip = ({ active, payload, label }) => {
         if (active && payload && payload.length) {
           return (
-            <div className="daily-tooltipBar">
-              <p className="daily-tooltipBar-content">{`${payload[0].value} kg`}</p>
-              <p className="daily-tooltipBar-content">{`${payload[1].value} Kcal`}</p>
+            <div className="Activity-tooltipBar">
+              <p className="Activity-tooltipBar-content">{`${payload[0].value} kg`}</p>
+              <p className="Activity-tooltipBar-content">{`${payload[1].value} Kcal`}</p>
             </div>
           );
         }
@@ -24,7 +24,7 @@ function Daily(props) {
 
     return (
         <>
-            <div className="daily">
+            <div className="Activity">
                 <BarChart
                     width={820}
                     height={300}
@@ -47,16 +47,16 @@ function Daily(props) {
                     <Bar dataKey="kilogram" fill="#282D30" radius={[25, 25, 0, 0]} barSize={7} />
                     <Bar dataKey="calories" fill="#E60000" radius={[25, 25, 0, 0]} barSize={7} />
                 </BarChart>
-                <div className="daily-wrapper">
-                    <div className="daily-title">Activité quotidienne</div>
-                    <div className="daily-legend">
-                        <div className="daily-legend-item">
-                            <div className="daily-legend-point point-black" />
-                            <p className="daily-legend-text">Poids (kg)</p>
+                <div className="Activity-wrapper">
+                    <div className="Activity-title">Activité quotidienne</div>
+                    <div className="Activity-legend">
+                        <div className="Activity-legend-item">
+                            <div className="Activity-legend-point point-black" />
+                            <p className="Activity-legend-text">Poids (kg)</p>
                         </div>
-                        <div className="daily-legend-item">
-                            <div className="daily-legend-point point-red" />
-                            <p className="daily-legend-text">Calories brûlées (kCal)</p>
+                        <div className="Activity-legend-item">
+                            <div className="Activity-legend-point point-red" />
+                            <p className="Activity-legend-text">Calories brûlées (kCal)</p>
                         </div>
                     </div>
                 </div>
@@ -65,4 +65,4 @@ function Daily(props) {
     )
 }
 
-export default Daily;
+export default Activity;

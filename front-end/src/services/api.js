@@ -17,15 +17,14 @@ export { Main_data, Activity, Average_session, Performance }
 
 const url = "http://localhost:3000/user/";
 
-const Mock = false;
+const Mock = true;
 
 export function GetName(id) {
     const [name, setName] = useState("");
-    console.log(id);
 
     useEffect(() => {
         if (Mock === true) {
-            fetch(`${Data}user${id}.json`)
+            fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setName(result.data.userInfos.firstName));
         } else {
@@ -44,8 +43,8 @@ export function GetKeyData(id) {
     const [keyData, setKeyData] = useState("");
 
     useEffect(() => {
-        if (Mock === true) {
-            fetch(`${Data}user${id}.json`)
+        if (Mock === false) {
+            fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setKeyData(result.data.keyData));
         } else {
@@ -64,15 +63,15 @@ export function GetActivityData(id) {
     const [activity, setActivity] = useState("");
 
     useEffect(() => {
-        if (Mock === true) {
-            fetch(`${Data}${id}/activity.json`)
+        if (Mock === false) {
+            fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setActivity(result.data.sessions));
         } else {
             if (id === "12") {
-                setActivity(Data.USER_ACTIVITY[0]);
+                setActivity(Data.USER_ACTIVITY[0].sessions);
             } else {
-                setActivity(Data.USER_ACTIVITY[1]);
+                setActivity(Data.USER_ACTIVITY[1].sessions);
             }
         }
     }, [id]);
@@ -85,14 +84,14 @@ export function GetSessionData(id) {
 
     useEffect(() => {
         if (Mock === true) {
-            fetch(`${Data}${id}/average-session.json`)
+            fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setSession(result.data.sessions));
         } else {
             if (id === "12") {
-                setSession(Data.USER_AVERAGE_SESSIONS[0]);
+                setSession(Data.USER_AVERAGE_SESSIONS[0].sessions);
             } else {
-                setSession(Data.USER_AVERAGE_SESSIONS[1]);
+                setSession(Data.USER_AVERAGE_SESSIONS[1].sessions);
             }
         }
     }, [id]);
@@ -104,15 +103,31 @@ export function GetScore(id) {
     const [score, setScore] = useState("");
 
     useEffect(() => {
-        if (Mock === true) {
-            fetch(`${Data}user${id}.json`)
+        if (Mock === false) {
+            fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setScore(result.data));
+                if (score.todayScore !== undefined){
+                    setScore(score.todayScore);
+                }
+                if (score.score !== undefined){
+                    setScore(score.score);
+                }
         } else {
             if (id === "12") {
-                setScore(Data.USER_MAIN_DATA[0]);
+                if (Data.USER_MAIN_DATA[0].todayScore !== undefined){
+                    setScore(Data.USER_MAIN_DATA[0].todayScore);
+                }
+                if (Data.USER_MAIN_DATA[0].score !== undefined){
+                    setScore(Data.USER_MAIN_DATA[0].score);
+                }
             } else {
-                setScore(Data.USER_MAIN_DATA[1]);
+                if (Data.USER_MAIN_DATA[1].todayScore !== undefined){
+                    setScore(Data.USER_MAIN_DATA[1].todayScore);
+                }
+                if (Data.USER_MAIN_DATA[1].score !== undefined){
+                    setScore(Data.USER_MAIN_DATA[1].score);
+                }
             }
         }
     }, [id]);
@@ -124,15 +139,15 @@ export function GetPerformance(id) {
     const [performance, setPerformance] = useState("");
 
     useEffect(() => {
-        if (Mock === true) {
-            fetch(`${Data}${id}/performance.json`)
+        if (Mock === false) {
+            fetch(url+id)
                 .then((response) => response.json())
                 .then((result) => setPerformance(result.data.data));
         } else {
             if (id === "12") {
-                setPerformance(Data.USER_PERFORMANCE[0]);
+                setPerformance(Data.USER_PERFORMANCE[0].data);
             } else {
-                setPerformance(Data.USER_PERFORMANCE[1]);
+                setPerformance(Data.USER_PERFORMANCE[1].data);
             }
         }
     }, [id]);
