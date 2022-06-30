@@ -35,4 +35,3 @@ To install this project you need :
 
 3. Launch frontend :
 `npm start`
-Use the command line : npm start
