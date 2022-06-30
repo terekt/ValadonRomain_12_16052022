@@ -17,10 +17,13 @@ To install this project you need :
 
 1. Clone the backend repository : `git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard`
 
-2. Place yourself into the cloned folder, then install dependencies :
+2. Place yourself into the cloned folder :
+`cd P9-front-end-dashboard`
+
+3. then install dependencies :
 `npm install`
 
-3. Launch backend server (port 3000) : 
+4. Launch backend server : 
 `npm run start`
 
 ### Frontend : Install and Launch
@@ -30,6 +33,6 @@ To install this project you need :
 2. Place yourself into the new React project folder, then install dependencies : 
 `npm install`
 
-3. Launch frontend (port 3001):
+3. Launch frontend :
 `npm start`
 Use the command line : npm start
