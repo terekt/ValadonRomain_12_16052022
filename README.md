@@ -30,8 +30,11 @@ To install this project you need :
 
 1. Create React App project : `npm init react-app my-app`
 
-2. Place yourself into the new React project folder, then install dependencies : 
+2. Create a new terminal and place yourself into the new React project folder : 
+`cd my-app`
+
+3. then install dependencies : 
 `npm install`
 
-3. Launch frontend :
+4. Launch frontend :
 `npm start`
